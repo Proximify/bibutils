@@ -1,6 +1,6 @@
 {
-    "name": "proximify/component-template",
-    "description": "Template for the creation of component packages.",
+    "name": "proximify/bibutils",
+    "description": "A PHP class to interface with the Bibutils libraries written in ANSI C.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -14,8 +14,8 @@
             "Proximify\\": "src"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "php": ">=7.1.0"
+        "php": ">=7.2.0"
     }
 }

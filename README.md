@@ -1,106 +1,57 @@
-# Component Template
+# Bibutils
 
-Template for the creation of component packages.
+A PHP class to interface with the **Bibutils** libraries written in ANSI C. **Bibutils** is a set of C programs written by [Chris Putnam](https://ctan.org/author/putnam).
 
-<!-- The TOC can be provided inline as nested bullets or in a separate file. Regardless, this starter file should have links to other root-level doc files so that a reader can navigate all the documentation by reading the text and clicking on hyperlinks within it. -->
+> "The bibutils program set inter-converts between various bibliography formats using a common MODS-format XML intermediate. For example, one can convert RIS-format files to BibTeX by doing two transformations: RIS->MODS->BibTeX. By using a common intermediate for N formats, only 2N programs are required and not N^2-N. These programs operate on the command line and are styled after standard UNIX-like filters." (see [CTAN package](https://ctan.org/pkg/bibutils))
 
-## Table of contents
--  See [table of contents](docs/toc.md).
+The current version of the libraries using in this project is [bibutils 6.7](http://mirrors.ctan.org/biblio/bibtex/utils/bibutils/bibutils_6.7_src.tgz), and are distributed under the [GNU General Public License Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
 
-## Getting started
-
-1. Download this repo manually from GitHub.
-1. Change the name of the root folder to reflect the name of your component (use a CamelCase name).
-1. Edit the composer.json to set the proper name of your component package (use lowercase, dash separated words).
-1. Renamed the main PHP and JSON files to the CamelCase name of the component.
-1. Edit the README and files under `docs/` to include the documentation for your component. Use breadcrumbs at the top of each doc page to show its location in the Table of Contents (TOC). Keep the `toc.md` file up to date with the latest TOC of your documentation.
-1. If the packages depends of foreign packages (e.g. NPM, PIP, etc), use the [ForeignPackages](https://packagist.org/packages/proximify/foreign-packages) component to install and update them when your component is installed or updated.
-1. Add CLI actions for testing your component bu using the [CLI Actions](https://packagist.org/packages/proximify/cli-actions) component.
-1. If possible to test your component within a webpage, add an `index.php` file at `dev/www` and test that it works by running `cd dev/www && php -S localhost:8000` and visiting `http://localhost:8000` with your browser.
-1. Submit your project to **Packagist** of it is public and test that it works by adding it as a requirement to some other project.
-
-## File Structure
-
-A **component package** is a folder with a standardized file structure.
-
-The **entry point** file must be place under a `src` folder at the root of the package. It must be a class definition where the class name is the module name. There file should only define one class and should not run any code. The constructor of the class should accept an `array $options = []` argument where the **named** arguments needed to create an object are provided.
-
-The **Composer project name** is always lowercase and with no spaces. The convention is to fill spaces with dashes. In addition, a namespace is mandatory. For example,
-
-    proximify/my-component
-
-In contrast, the **component name** is given as a single word in CamelCase with a name space also in CamelCase. For example,
-
-    Proximify\MyComponent
-
-The **short or unqualified component name** is thee component name within its namespace. Similarly, the **short or unqualified project name** is the name of the project without its namespace.
-
-The typical file structure of a component package is:
-
-```
-# Project name: proximify/my-component
-
-MyComponent
-├── assets
-│   ├── images
-│   │   └── example.svg
-│   └── fonts
-├── docs
-│   ├── toc.md
-│   └── intro.md
-├── config
-│   └── settings.json
-├── src
-│   └── MyComponent.php
-├── dev
-│   ├── tests
-│   └── www
-├── LICENSE
-├── README.md
-└── composer.json
-```
-
-### Important considerations
-
-Assets related to documentation should be in `docs/assets/`. The assets that are needed by the component to do it's normal work go under the **root** `assets/` directory. The assets that are only needed for development should go under `dev/assets/`, and if the assets is only needed for testing, it can be should be placed under under `dev/tests/assets/`.
-
-The folders `docs` and `dev` are **not included** in production environments. Everything related to documentation should be placed under `docs` except for the entry point README.md. Everything related to development should be placed under the `dev` folder.
-
-Summary:
-
-1. The component must work without the `docs` and `dev` folders;
-1. All files related to the documentation must go under `docs` (expected for the `README.md`);
-1. All files related to development must fo under `dev`;
-1. Testing files must go under `dev/tests` (except for the entry point `dev/www` used for web-based testing).
-
-## Testing
-
-The component should be testable from the command line via well-documented composer arguments. For example, when the command
+## Installation
 
 ```bash
-$ composer test:fetch arg1 arg2 ...
+$ composer require proximify/bibutils
 ```
 
-is run at the root of the project, it will perform a test named "fetch" with arguments arg1, arg2, etc.
+## Class and Methods
 
-### Web-based testing
+The class constructor has no arguments.
 
-The `dev/www` can be given as a visual dashboard for performing tests. Do not use that options as a way of avoiding providing CLI tests or CLI documentation. The `dev/www` is meant to be an alternative visual way to run tests.
+```php
+use Proximify\Bibutils;
 
-Some components can only be tested from within a webpage. In such cases, the `dev/www` folder is a mandatory as an entry point for the tests.
+$bibutils = new Bibutils();
+```
 
-## Shared resources
+## The `convert` method
 
-Some components might need access to a database, the file system, or to daemons, such as cron jobs. When that's the case, they should:
+```php
+convert( string $source , string $target, ?string $in = null, ?string $out = null) : void
+```
 
-1. Require a proper resource manager, such as a `proximify/db-manager` or `proximify/cron-manager`.
+### Description
 
-1. Define schemas in YAML located in a root `schemas/YYY/` folder, where YYY us the type of resource, such as `db` or `cron`.
+This method converts the contents of a source file and saves them into a target file. The input and output formats are inferred from the file extensions when not explicitly given.
 
-1. Define `install` and `update` scripts in `composer.json` so that the component registers one or more schemas with the appropriate resource manager. For example, 
-    ```bash
-    $ cd vendor/proximify/cron-manager && composer cron:register '../../schemas/cron'
-    ```
+### Parameters
+
+- **source**<br>The source file name.
+- **target**<br>The target file name.
+- **in**<br>The input format. It is inferred from the source's filename extension if not given.
+- **out**<br>The output format. It is inferred from the target's filename extension if not given.
+
+### Return Values
+
+There are no return values. A generic **Exception** is thrown on error.
+
+### Examples
+
+```php
+use Proximify\Bibutils;
+
+$bibutils = new Bibutils();
+
+$bibutils->convert('./bibs.ris', './bibs.bib');
+```
 
 ---
 
@@ -116,6 +67,6 @@ This project has adopted the [Proximify Open Source Code of Conduct](https://git
 
 Copyright (c) Proximify Inc. All rights reserved.
 
-Licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+Licensed under the [GNU General Public License Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) license.
 
 **Software component** is made by [Proximify](https://proximify.com). We invite the community to participate.
