@@ -6,12 +6,12 @@
  * @license   MIT
  */
 
-namespace Proximify;
+namespace Proximify\Bibutils;
 
 /**
  * Template class.
  */
-class CLIActions
+class Bibutils
 {
     /**
      * Undocumented function
