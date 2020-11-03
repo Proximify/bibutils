@@ -16,6 +16,13 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.2.0"
+        "php": ">=7.2.0",
+        "symfony/process": "^5.1",
+        "proximify/cli-actions": "^1.0"
+    },
+    "scripts": {
+        "post-install-cmd": "@make",
+        "make": "cd src/make && make",
+        "app:read": "Proximify\\CLIActions::auto"
     }
 }
