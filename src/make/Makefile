@@ -8,7 +8,7 @@ INSTALLDIR=../../../../bin
 
 all : FORCE
 	@for p in ${LIBRARIES}; \
-		do ( cd $$p && sh -f configure --install-dir "$(INSTALLDIR)" && make install && make realclean); \
+		do ( cd $$p && sh -f configure --install-dir "$(INSTALLDIR)" && make install && make realclean && rm Makefile); \
 	done
 
 # Dummy unsatisfiable rule to force the making of the libraries
