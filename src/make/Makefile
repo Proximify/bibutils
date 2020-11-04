@@ -3,7 +3,7 @@ DATE=2020
 
 # List all libraries separated by a space (a new line nees a slash in previous).
 # e.g., LIBRARIES=bib2xml ris2xml
-LIBRARIES=bibutils_6.7
+LIBRARIES=bibutils_6.10
 INSTALLDIR=../../../../bin
 
 all : FORCE

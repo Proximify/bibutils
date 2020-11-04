@@ -1,0 +1,107 @@
+body {
+	font: 9pt/16px Verdana, Arial, Helvetica, sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+a:link, a:visited {
+	color: #336633;
+	text-decoration: none;
+	/*border-bottom: 1px solid #666666;*/
+}
+a:hover {
+	color: #336633;	
+	text-decoration: underline;
+	/**/
+	background: #eeeeee;
+}
+table#layout {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+table#layout #top_nav {
+	margin: 0px;
+	padding: 5px 0px 8px 6px;
+	font: 8pt Verdana, Arial, Helvetica, sans-serif;
+	border-bottom: 1px solid #999999;
+}
+table#layout #header {
+	margin: 0px;
+	padding: 0px;
+}
+table#layout #header h1 {
+	margin: 0px;
+	padding: 0px;
+}
+table#layout #top2_nav {
+	margin: 0px;
+	padding: 5px 0px 8px 6px;
+	font: 8pt Verdana, Arial, Helvetica, sans-serif;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	background: #eeeeee;
+}
+.selected {
+	font: bold;
+	color: #666666;
+}
+table#layout #bottom2_nav {
+	margin: 0px;
+	padding: 5px 0px 8px 6px;
+	font: 8pt Verdana, Arial, Helvetica, sans-serif;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+	background: #eeeeee;
+}
+table#layout #bottom_nav {
+	margin: 0px;
+	padding: 10px 20px 8px 6px;
+	font: 8pt Verdana, Arial, Helvetica, sans-serif;
+}
+table#layout #bottom_nav #footleft {
+	float: left;
+}
+table#layout #bottom_nav #footright {
+	float: right;
+}
+#content {
+	margin: 5px 0px 8px 6px;
+	padding: 0px;
+}	
+#layout #content h1 {
+	font: bold 16pt Georgia, "Times New Roman", Times, serif;
+	color: #003300;
+}
+#layout #content h2 {
+	font: bold 13pt Georgia, "Times New Roman", Times, serif;
+	color: #333333;
+}
+#layout #content h3 {
+	font: bold 12pt Georgia, "Times New Roman", Times, serif;
+	color: #003300;
+}
+#layout #content #text {
+/*	width: 740px; */
+	width: 670px;
+}
+#layout #content dt {
+  font-weight: bold;
+}
+
+.smaller {
+	font-size: 10pt;
+}
+.smaller_orgs {
+	font-size: 8pt;
+}
+.pdf {
+	font-size: 8pt;
+	color: #666666;
+}
+/*for Relators*/
+
+#navigation-top .lower-level-links {margin-top: -.75em;}
+#navigation-bottom .higher-level-links {margin-top: -.75em;}
+
+
+

@@ -18,11 +18,15 @@
     "require": {
         "php": ">=7.2.0",
         "symfony/process": "^5.1",
+        "symfony/polyfill-php74": "^1.20"
+    },
+    "require-dev": {
         "proximify/cli-actions": "^1.0"
     },
     "scripts": {
         "post-install-cmd": "@make",
         "make": "cd src/make && make",
-        "app:read": "Proximify\\CLIActions::auto"
+        "app:read": "Proximify\\CLIActions::auto",
+        "app:convert": "Proximify\\CLIActions::auto"
     }
 }

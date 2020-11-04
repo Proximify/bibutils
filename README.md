@@ -4,7 +4,7 @@ A PHP class to interface with the **Bibutils** libraries written in ANSI C. **Bi
 
 > "The bibutils program set inter-converts between various bibliography formats using a common [MODS-format XML](https://www.loc.gov/standards/mods/) intermediate. For example, one can convert RIS-format files to BibTeX by doing two transformations: RIS->MODS->BibTeX. By using a common intermediate for N formats, only 2N programs are required and not N^2-N. These programs operate on the command line and are styled after standard UNIX-like filters." (see [CTAN package](https://ctan.org/pkg/bibutils))
 
-The current version of the libraries using in this project is [bibutils 6.7](http://mirrors.ctan.org/biblio/bibtex/utils/bibutils/bibutils_6.7_src.tgz), and are distributed under the [GNU General Public License Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
+The current version of the libraries using in this project is [bibutils 6.10](https://sourceforge.net/projects/bibutils/files/), and are distributed under the [GNU General Public License Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
 
 ## Metadata Object Description Schema (MODS)
 
@@ -21,50 +21,84 @@ $ composer require proximify/bibutils
 ## Class synopsis
 
 ```php
-namespace Proximify\Bibutils;
+namespace Proximify;
 
 class Bibutils {
     /* Methods */
-    public parse( string $data , string $format) : string
-    public encode( string $mods , string $format) : string
-    public readFile( string $filename , ?string $format = null) : string
-    public writeFile( string $filename , string $mods , string $format = null) : string
-    public convert( string $srcFilename , string $tgtFilename, ?string $srcFormat = null, ?string $tgtFormat = null) : void
+    public static read( array $options) : string
+    public static convert( string $options) : string
 }
 ```
 
-## The `convert` method
+### `read`
 
 ```php
-public Bibutils::convert( string $source , string $target, ?string $in = null, ?string $out = null) : void
+public static Bibutils::read( array $options ) : string
 ```
 
-### Description
+#### Description
 
-This method converts the contents of a source file and saves them into a target file. The input and output formats are inferred from the file extensions when not explicitly given.
+This method reads read bibliographic contents of a file into a MOD XML string.
+The input is inferred from the file extensions when not explicitly given.
 
-### Parameters
+#### Parameters
 
-| Name  |  Description |
-|---|---|
-| **srcFilename**  | The source file name.  |
-| **tgtFilename** |The target file name.|
-| **srcFormat** |The input format. It is inferred from the source's filename extension if not given.|
-| **tgtFormat** |The output format. It is inferred from the target's filename extension if not given.|
+| Option key   | Description                       |
+| ------------ | --------------------------------- |
+| **filename** | The path to the source file name. |
+| **in**       | An optional input format.         |
 
-### Return Values
+#### Return Values
 
-There are no return values. A generic **Exception** is thrown on error.
+The loaded bibliographic data. A generic **Exception** is thrown on error.
 
-### Examples
+### `convert`
+
+```php
+public Bibutils::convert( array $options ) : string
+```
+
+#### Description
+
+This method reads read bibliographic contents of a file into a MOD XML strin and converts it to a selected output bibliographic format. The input format is inferred from the file extensions when not explicitly given.
+
+#### Parameters
+
+| Option key   | Description                       |
+| ------------ | --------------------------------- |
+| **filename** | The path to the source file name. |
+| **out**      | The output format.                |
+| **in**       | An optional input format.         |
+
+#### Return Values
+
+The converted bibliographic data. A generic **Exception** is thrown on error.
+
+## Examples
 
 ```php
 use Proximify\Bibutils;
 
-$bibutils = new Bibutils();
+// Read an EndNote XML into MOD XML
+$xml = Bibutils::read(['filename' => 'dev/data/bibtex/one_of_each.bib']);
 
-$bibutils->convert('./bibs.ris', './bibs.bib');
+// Load a RIS file and converted into a BibTex string
+$bib = Bibutils::convert(['filename' => 'refs.ris', 'out' => 'bib']);
 ```
+
+## CLI Scripts
+
+```bash
+composer app:read dev/data/bibtex/one_of_each.bib
+composer app:convert dev/data/bibtex/one_of_each.bib end
+```
+
+---
+
+## Bibutils references
+
+-   [SourceForge Bibutils 6.10](https://sourceforge.net/projects/bibutils/files/bibutils_6.10_src.tgz/download)
+-   [CTAN Bibutils 6.7](http://mirrors.ctan.org/biblio/bibtex/utils/bibutils/bibutils_6.7_src.tgz)
 
 ---
 

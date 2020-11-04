@@ -1,0 +1,152 @@
+% http://camp.nci.nih.gov/public/hr/redbook/biblifmt.htm
+% NCI bibliography format definition: example
+% version = 1.00 of nci.bib 2001 November 27
+
+% Attachment 5 
+% 
+%              BIBLIOGRAPHIC REFERENCE FORMAT 
+% 
+% ARTICLE IN A PERIODICAL: 
+% 
+% Each citation of a paper in a journal includes the following
+% publication facts in the sequence shown: 
+% 
+%     Author(s), surname and initials. If more than one author, list
+%     in the same order as published. Title article. Name of
+%     journal, volume, inclusive page numbers, and year.
+%     Punctuate as shown in example: 
+% 
+%                         Example: 
+% 
+%     Adamson, R. H., Cooper, R. W., and O'Gara, R.W.:
+%     Carcinogen-induced tumors in primitive primates. J.
+
+@article{Adamson.O'Gara1970,
+author = "R. H. Adamson
+ and R. W. Cooper
+ and R. W. O'Gara",
+title = "{Carcinogen-induced tumors in primitive primates}",
+volume = "45",
+pages = "555--559",
+year = "1970"}
+
+% BOOK: 
+% 
+% Publication facts required and sequence in which they should appear:
+% 
+%     Author(s) or editor(s), surname and initials. If more than
+%     one author editor, list in the order given on the title page.
+%     Title of book, edition or volume, if given. Place of
+%     publication, publisher, year of publication, and number of
+%     pages. Punctuate as shown in examples: 
+% 
+%                     Example - Author(s): 
+% 
+%     Rosenthal, D.: Genetic Theory and Abnormal Behavior. New
+%     York, McGraw-Hill Book Co., 1970, 318 pp. 
+
+@book{Rosenthal1970,
+author = "D. Rosenthal",
+title = "Genetic Theory and Abnormal Behavior",
+publisher = "McGraw-Hill Book Co.",
+address = "New York",
+pages = "318",
+year = "1970"}
+
+%                     Example - Editor(s): 
+% 
+%     DeVita, V.T. and Busch, H. (Eds.): Methods in Cancer
+%     Research, Vol. 16. Cancer Drug Development, Part A. New
+%     York, Academic Press, 1979, 456 pp.
+
+@book{DeVita.Busch1979,
+editor = "V. T. DeVita
+ and H. Busch",
+title = "Methods in Cancer Research,
+Vol. 16.  Cancer Drug Development, Part A",
+publisher = "Academic Press",
+address = "New York",
+pages = "456",
+year = "1979"}
+
+% ARTICLE IN BOOK:
+% 
+% Include the following publication facts in the sequence shown: 
+% 
+%     Author(s), surname and initial. If more than one author, list
+%     in same order as published. Title of article. Editor(s) of
+%     book, surname and initials. Title of book, edition or
+%     volume, if given. Location and name of publisher, year and
+%     inclusive page numbers. 
+% 
+%                         Example: 
+% 
+%     Everson, R. B. and Lippman, M. E.: Male breast cancer. In
+%     McGuire, W. L. (Ed.): Breast Cancer Advances in Research
+%     Treatment, Vol. III. New York, Plenum, 1979, pp. 239-267.
+
+@inproceedings{Everson.Lippman1979,
+author = "R. B. Everson
+ and M. E. Lippman",
+title = "Male breast cancer",
+editor = "W. L. McGuire",
+booktitle = "Breast Cancer Advances in Research
+Treatment, Vol. III",
+address = "New York",
+publisher = "Plenum",
+pages = "239--267",
+year = "1979"}
+
+% PUBLICATION ISSUED BY DEPARTMENT OF THE U.S.
+% GOVERNMENT: 
+% 
+% Include the following publication facts in the sequence shown: 
+% 
+%     Author(s) or editor(s), surname and initials. If more than
+%     one author or editor, list in same order as published. Title
+%     of publication. Agency publication number, year, and
+%     number of pages. 
+% 
+%                         Example: 
+% 
+%     Lippel, K. (Ed.): Report of the High Density Lipoprotein
+%     Workshop. NIH Publ. No. 79-1661, 1979, 399 pp.
+
+@book{Lippel1979,
+editor = "K. Lippel",
+title = "{Report of the High Density Lipoprotein Workshop}",
+publisher = "{NIH Publ. No. 79-1661}",
+pages = "399",
+year = "1979"}
+
+@inproceedings{original.test.Lippel1979,
+editor = "K. Lippel",
+title = "{Report of the High Density Lipoprotein,
+Workshop.  NIH Publ. No. 79-1661}",
+pages = "399",
+year = "1979"}
+
+% ARTICLE IN PUBLICATION ISSUED BY A DEPARTMENT OF THE U.S.
+% GOVERNMENT: 
+% 
+% Include the following publication facts in the sequence shown: 
+% 
+%     Author(s), surname and initials. If more that one author, list
+%     in same order as published. Title of article. Editor(s) of
+%     book, surname and initials. Title of book. Agency
+%     publication number, year, and inclusive page numbers of
+%     article. 
+% 
+%                         Example: 
+% 
+%     Salans, L. B.: Natural history of obesity. In Bray, G.A. (Ed.):
+%     Obesity in America. NIH Publ. No. 79-359, 1979, pp. 69-94.
+
+@inproceedings{Salans1979,
+author = "L. B. Salans",
+title = "Natural history of obesity",
+editor = "G. A. Bray",
+booktitle = "Obesity in America",
+publisher = "NIH Publ. No. 79-359",
+pages = "69--94",
+year = "1979"}

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modsCollection xmlns="http://www.loc.gov/mods/v3">
+    <mods ID="salam">
+        <titleInfo>
+            <title>Weak and Electromagnetic Interactions</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Abdus</namePart>
+            <namePart type="family">Salam</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <typeOfResource>text</typeOfResource>
+        <relatedItem type="host">
+            <titleInfo>
+                <title>Elementary particle theory</title>
+            </titleInfo>
+            <name type="personal">
+                <namePart type="given">Nils</namePart>
+                <namePart type="family">Svartholm</namePart>
+                <role>
+                    <roleTerm authority="marcrelator" type="text">editor</roleTerm>
+                </role>
+            </name>
+            <originInfo>
+                <publisher>Almquist &amp; Wiksell</publisher>
+            </originInfo>
+            <genre authority="marcgt">conference publication</genre>
+            <location>
+                <physicalLocation>Stockholm</physicalLocation>
+            </location>
+        </relatedItem>
+        <identifier type="citekey">salam</identifier>
+        <part>
+            <extent unit="page">
+                <start>367</start>
+                <end>377</end>
+            </extent>
+        </part>
+    </mods>
+    <mods ID="article">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Adams</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <relatedItem type="host">
+            <titleInfo>
+                <title>The name of the journal</title>
+            </titleInfo>
+            <originInfo>
+                <issuance>continuing</issuance>
+            </originInfo>
+            <genre authority="marcgt">periodical</genre>
+            <genre>academic journal</genre>
+        </relatedItem>
+        <note>An optional note</note>
+        <identifier type="citekey">article</identifier>
+        <part>
+            <date>1993-7</date>
+            <detail type="volume">
+                <number>4</number>
+            </detail>
+            <detail type="number">
+                <number>2</number>
+            </detail>
+            <extent unit="page">
+                <start>201</start>
+                <end>213</end>
+            </extent>
+        </part>
+    </mods>
+    <mods ID="book">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Babington</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <issuance>monographic</issuance>
+            <dateIssued>1993-07</dateIssued>
+            <publisher>The name of the publisher</publisher>
+            <place>
+                <placeTerm type="text">The address</placeTerm>
+            </place>
+            <edition>3</edition>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <genre authority="marcgt">book</genre>
+        <relatedItem type="host">
+            <titleInfo>
+                <title>10</title>
+            </titleInfo>
+        </relatedItem>
+        <note>An optional note</note>
+        <identifier type="isbn">3257227892</identifier>
+        <identifier type="citekey">book</identifier>
+        <part>
+            <detail type="volume">
+                <number>4</number>
+            </detail>
+        </part>
+    </mods>
+    <mods ID="booklet">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Caxton</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <issuance>monographic</issuance>
+            <dateIssued>1993-07</dateIssued>
+            <place>
+                <placeTerm type="text">The address of the publisher</placeTerm>
+            </place>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <genre authority="marcgt">book</genre>
+        <note>An optional note</note>
+        <identifier type="citekey">booklet</identifier>
+        <location>
+            <url>How it was published</url>
+        </location>
+    </mods>
+    <mods ID="conference">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Draper</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <relatedItem type="host">
+            <titleInfo>
+                <title/>
+            </titleInfo>
+            <originInfo>
+                <issuance>continuing</issuance>
+                <publisher>The publisher</publisher>
+                <place>
+                    <placeTerm type="text">The address of the publisher</placeTerm>
+                </place>
+            </originInfo>
+            <genre authority="marcgt">periodical</genre>
+            <genre>academic journal</genre>
+        </relatedItem>
+        <note>An optional note</note>
+        <identifier type="citekey">conference</identifier>
+        <part>
+            <date>1993-7</date>
+            <detail type="volume">
+                <number>4</number>
+            </detail>
+            <detail type="page">
+                <number>213</number>
+            </detail>
+        </part>
+    </mods>
+    <mods ID="inbook">
+        <titleInfo>
+            <title>8</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Eston</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <relatedItem type="host">
+            <titleInfo>
+                <title>The title of the work</title>
+            </titleInfo>
+            <originInfo>
+                <issuance>monographic</issuance>
+                <dateIssued>1993-07</dateIssued>
+                <publisher>The name of the publisher</publisher>
+                <place>
+                    <placeTerm type="text">The address of the publisher</placeTerm>
+                </place>
+                <edition>3</edition>
+            </originInfo>
+            <genre authority="marcgt">book</genre>
+            <relatedItem type="host">
+                <titleInfo>
+                    <title>5</title>
+                </titleInfo>
+                <part>
+                    <detail type="volume">
+                        <number>4</number>
+                    </detail>
+                </part>
+            </relatedItem>
+            <part>
+                <extent unit="page">
+                    <start>201</start>
+                    <end>213</end>
+                </extent>
+            </part>
+        </relatedItem>
+        <note>An optional note</note>
+        <identifier type="citekey">inbook</identifier>
+    </mods>
+    <mods ID="incollection">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Farindon</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <issuance>monographic</issuance>
+            <dateIssued>1993-07</dateIssued>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <relatedItem type="host">
+            <titleInfo>
+                <title>The title of the book</title>
+            </titleInfo>
+            <name type="personal">
+                <namePart type="given">The</namePart>
+                <namePart type="family">editor</namePart>
+                <role>
+                    <roleTerm authority="marcrelator" type="text">editor</roleTerm>
+                </role>
+            </name>
+            <originInfo>
+                <dateIssued>1993-07</dateIssued>
+                <publisher>The name of the publisher</publisher>
+                <place>
+                    <placeTerm type="text">The address of the publisher</placeTerm>
+                </place>
+                <edition>3</edition>
+            </originInfo>
+            <genre>collection</genre>
+            <relatedItem type="host">
+                <titleInfo>
+                    <title>5</title>
+                </titleInfo>
+            </relatedItem>
+        </relatedItem>
+        <note>An optional note</note>
+        <identifier type="citekey">incollection</identifier>
+        <part>
+            <detail type="volume">
+                <number>4</number>
+            </detail>
+            <extent unit="page">
+                <start>201</start>
+                <end>213</end>
+            </extent>
+        </part>
+    </mods>
+    <mods ID="manual">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Gainsford</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <name type="corporate">
+            <namePart>The organization</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+            <place>
+                <placeTerm type="text">The address of the publisher</placeTerm>
+            </place>
+            <edition>3</edition>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <genre authority="marcgt">instruction</genre>
+        <note>An optional note</note>
+        <identifier type="citekey">manual</identifier>
+    </mods>
+    <mods ID="mastersthesis">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Harwood</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <name>
+            <namePart>The school of the thesis</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">degree grantor</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+            <place>
+                <placeTerm type="text">The address of the publisher</placeTerm>
+            </place>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <genre authority="marcgt">theses</genre>
+        <genre>Masters thesis</genre>
+        <note>An optional note</note>
+        <identifier type="citekey">mastersthesis</identifier>
+    </mods>
+    <mods ID="misc">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Isley</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+        </originInfo>
+        <note>An optional note</note>
+        <identifier type="citekey">misc</identifier>
+        <location>
+            <url>How it was published</url>
+        </location>
+    </mods>
+    <mods ID="phdthesis">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Joslin</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <name>
+            <namePart>The school of the thesis</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">degree grantor</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+            <place>
+                <placeTerm type="text">The address of the publisher</placeTerm>
+            </place>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <genre authority="marcgt">theses</genre>
+        <genre>Ph.D. thesis</genre>
+        <note>An optional note</note>
+        <identifier type="citekey">phdthesis</identifier>
+    </mods>
+    <mods ID="proceedings">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="corporate">
+            <namePart>The organization</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Kidwelly</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">editor</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+            <publisher>The name of the publisher</publisher>
+            <place>
+                <placeTerm type="text">The address of the publisher</placeTerm>
+            </place>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <genre authority="marcgt">conference publication</genre>
+        <relatedItem type="host">
+            <titleInfo>
+                <title>5</title>
+            </titleInfo>
+        </relatedItem>
+        <note>An optional note</note>
+        <identifier type="citekey">proceedings</identifier>
+        <part>
+            <detail type="volume">
+                <number>4</number>
+            </detail>
+        </part>
+    </mods>
+    <mods ID="techreport">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Lambert</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+            <publisher>The institution that published</publisher>
+            <place>
+                <placeTerm type="text">The address of the publisher</placeTerm>
+            </place>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <genre>report</genre>
+        <note>An optional note</note>
+        <identifier type="citekey">techreport</identifier>
+        <part>
+            <detail type="number">
+                <number>2</number>
+            </detail>
+        </part>
+    </mods>
+    <mods ID="unpublished">
+        <titleInfo>
+            <title>The title of the work</title>
+        </titleInfo>
+        <name type="personal">
+            <namePart type="given">Peter</namePart>
+            <namePart type="family">Marcheford</namePart>
+            <role>
+                <roleTerm authority="marcrelator" type="text">author</roleTerm>
+            </role>
+        </name>
+        <originInfo>
+            <dateIssued>1993-07</dateIssued>
+        </originInfo>
+        <typeOfResource>text</typeOfResource>
+        <genre>unpublished</genre>
+        <note>An optional note</note>
+        <identifier type="citekey">unpublished</identifier>
+    </mods>
+</modsCollection>

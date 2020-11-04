@@ -11,79 +11,166 @@ namespace Proximify;
 require_once 'vendor/autoload.php';
 
 use Exception;
-use Symfony\Component\Process\Process;
-use Symfony\Component\Process\Exception\ProcessFailedException;
+
+// use Symfony\Component\Process\Process;
+// use Symfony\Component\Process\Exception\ProcessFailedException;
 
 /**
- * Template class.
+ * Read bibliographic formats into a MOD XML format.
+ * Convert from MOD XML to several bibliographic formats.
  */
 class Bibutils
 {
+    public const BIN_DIR = __DIR__ . '/../bin';
+
     /**
-     * Undocumented function
+     * Read bibliographic formats into a MOD XML format.
      *
-     * @param array $options Explain all the options
-     * here or give a like to the appropriate documentation
-     * page.
+     * @param array $options
+     * @return string
      */
-    public function __construct(array $options = [])
+    public static function read(array $options): string
     {
+        $filename = $options['filename'] ?? '';
+        $format = $options['in'] ?? null;
+
+        $cmd = self::makeReadCommand($filename, $format);
+
+        return self::run($cmd);
     }
 
-    public function parse(string $data, string $format): string
+    /**
+     * Convert from MOD XML to several bibliographic formats.
+     *
+     * @param array $options
+     * @return string
+     */
+    public static function convert(array $options): string
     {
-        return '';
+        $srcPath = $options['filename'] ?? '';
+        $srcFmt = $options['in'] ?? '';
+
+        $cmd = self::makeReadCommand($srcPath, $srcFmt);
+        $app = self::getWriteApp($options['out'] ?? '');
+
+        return self::run("$cmd | ./$app");
     }
 
-    public function encode(string $mods, string $format): string
+    public static function getReadApp(string $format): string
     {
-        return '';
+        $format = strtolower($format);
+
+        switch ($format) {
+            case 'bib':
+            case 'biblatex':
+            case 'copac':
+            case 'ebi':
+            case 'end':
+            case 'endx':
+            case 'isi':
+            case 'med':
+            case 'nbib':
+            case 'ris':
+            case 'wordbib':
+                return $format . '2xml';
+            case 'doc':
+                return 'wordbib2xml';
+            default:
+                throw new Exception("Unknown reading format '$format'");
+        }
     }
 
-    public function readFile(array $options)
+    public static function getWriteApp(string $format): string
     {
-        $options['.env'] = null;
-        print_r($options);
+        $format = strtolower($format);
 
-        $filename = realpath($options['filename']);
-        $format = $options['format'];
-
-        // string $filename, ?string $format = null
-        $format = $format ?? pathinfo($filename, PATHINFO_EXTENSION);
-
-        $cmd = $format . '2xml';
-
-        $xml = $this->run($cmd, $filename);
-
-        echo $xml;
-
-        return $xml;
+        switch ($format) {
+            case 'ads':
+            case 'bib':
+            case 'end':
+            case 'isi':
+            case 'nbib':
+            case 'ris':
+            case 'wordbib':
+                return 'xml2' . $format;
+            case 'doc':
+                return 'xml2wordbib';
+            default:
+                throw new Exception("Unknown writing format '$format'");
+        }
     }
 
-    public function writeFile(string $filename, string $mods, string $format = null)
+    protected static function execute(string $cmd, string $workDir, ?array $env = null): array
     {
-    }
+        $descriptor = [
+            0 => ['pipe', 'r'], // stdin
+            1 => ['pipe', 'w'], // stdout
+            2 => ['pipe', 'w'], // stderr
+        ];
 
-    public function convert(string $srcFilename, string $tgtFilename, ?string $srcFormat = null, ?string $tgtFormat = null): void
-    {
-    }
+        $process = proc_open($cmd, $descriptor, $pipes, $workDir, $env);
 
-    protected function run($appName, $filename)
-    {
-        if (!is_file($filename)) {
-            throw new Exception("Cannot find file '$filename'");
+        if (!$process) {
+            throw new Exception("Cannot execute command");
         }
 
-        $cmd = [$appName, $filename];
+        $stdout = stream_get_contents($pipes[1]);
+        fclose($pipes[1]);
 
-        $process = new Process($cmd);
+        $stderr = stream_get_contents($pipes[2]);
+        fclose($pipes[2]);
 
-        $process->run();
+        return [
+            'out' => trim($stdout),
+            'err' => trim($stderr),
+            'code' => proc_close($process)
+        ];
+    }
 
-        if (!$process->isSuccessful()) {
-            throw new ProcessFailedException($process);
+    protected static function makeReadCommand(
+        string $filename,
+        ?string $format = null
+    ): string {
+        if (!$filename) {
+            throw new Exception("Missing input filename");
         }
 
-        return $process->getOutput();
+        $filename = realpath($filename);
+
+        if (!$filename || !is_file($filename)) {
+            throw new Exception("Cannot find input file");
+        }
+
+        if (!$format) {
+            $format = pathinfo($filename, PATHINFO_EXTENSION);
+        }
+
+        $app = self::getReadApp($format);
+
+        return "./$app '$filename'";
     }
+
+    protected static function run(string $cmd): string
+    {
+        $std = self::execute($cmd, self::BIN_DIR);
+
+        if ($std['code'] != 0) {
+            throw new Exception($std['err']);
+        }
+
+        return $std['out'];
+    }
+
+    // protected function run(string $cmd): string
+    // {
+    //     $process = new Process([$cmd], self::BIN_DIR);
+
+    //     $process->run();
+
+    //     if (!$process->isSuccessful()) {
+    //         throw new ProcessFailedException($process);
+    //     }
+
+    //     return $process->getOutput();
+    // }
 }

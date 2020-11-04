@@ -1,0 +1,13 @@
+class: Proximify\Bibutils
+method: convert
+echo: true
+arguments:
+  filename:
+    prompt: File name to read?
+    index: 0
+  out:
+    prompt: Output format?
+    index: 1
+  in:
+    prompt: Input format?
+    value: ''

@@ -1,10 +1,11 @@
 class: Proximify\Bibutils
-method: readFile
+method: read
+echo: true
 arguments:
   filename:
     prompt: File name to read?
     index: 0
-  format:
+  in:
     prompt: Input format?
     index: 1
     value: false
