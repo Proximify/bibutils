@@ -4,7 +4,7 @@ A PHP class to interface with the [Bibutils](https://sourceforge.net/p/bibutils/
 
 > "The bibutils program set inter-converts between various bibliography formats using a common [MODS-format XML](https://www.loc.gov/standards/mods/) intermediate. For example, one can convert RIS-format files to BibTeX by doing two transformations: RIS->MODS->BibTeX. By using a common intermediate for N formats, only 2N programs are required and not N^2-N. These programs operate on the command line and are styled after standard UNIX-like filters." (see [CTAN package](https://ctan.org/pkg/bibutils))
 
-The current version of the libraries using in this project is [bibutils 6.10](https://sourceforge.net/projects/bibutils/files/), and are distributed under the [GNU General Public License Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
+The current version of the libraries using in this project is [bibutils 6.10](https://sourceforge.net/projects/bibutils/files/) (released on **2020-03-23**). The original files are unmodified and distributed under the [GNU General Public License Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
 
 ## Metadata Object Description Schema (MODS)
 
@@ -28,7 +28,6 @@ $ composer require proximify/bibutils
 namespace Proximify;
 
 class Bibutils {
-    /* Methods */
     public static read( array $options) : string
     public static convert( string $options) : string
 }
@@ -42,8 +41,7 @@ public static Bibutils::read( array $options ) : string
 
 #### Description
 
-This method reads read bibliographic contents of a file into a MOD XML string.
-The input is inferred from the file extensions when not explicitly given.
+This method reads read bibliographic contents of a file into a MOD XML string. The input is inferred from the file extensions when not explicitly given.
 
 #### Parameters
 
