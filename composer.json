@@ -23,6 +23,7 @@
     },
     "scripts": {
         "post-install-cmd": "@build",
+        "post-create-project-cmd": "@build",
         "build": "cd src/make && make",
         "app:read": "Proximify\\CLIActions::auto",
         "app:convert": "Proximify\\CLIActions::auto"
