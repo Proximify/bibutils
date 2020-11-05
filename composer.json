@@ -2,7 +2,7 @@
     "name": "proximify/bibutils",
     "description": "A PHP class to interface with the Bibutils libraries written in ANSI C.",
     "type": "library",
-    "license": "MIT",
+    "license": "GPL 2",
     "authors": [
         {
             "name": "Proximify Inc",
