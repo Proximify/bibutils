@@ -22,8 +22,8 @@
         "proximify/cli-actions": "^1.0"
     },
     "scripts": {
-        "post-install-cmd": "@make",
-        "make": "cd src/make && make",
+        "post-install-cmd": "@build",
+        "build": "cd src/make && make",
         "app:read": "Proximify\\CLIActions::auto",
         "app:convert": "Proximify\\CLIActions::auto"
     }
