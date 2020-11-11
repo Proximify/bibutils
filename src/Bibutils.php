@@ -8,8 +8,6 @@
 
 namespace Proximify;
 
-require_once 'vendor/autoload.php';
-
 use Exception;
 
 // use Symfony\Component\Process\Process;
