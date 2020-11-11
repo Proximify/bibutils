@@ -94,8 +94,8 @@ class Bibutils
             case 'isi':
             case 'nbib':
             case 'ris':
-            case './wordbib':
-                return 'xml2' . $format;
+            case 'wordbib':
+                return './xml2' . $format;
             case 'doc':
                 return './xml2wordbib';
             case 'mod':
