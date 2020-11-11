@@ -53,7 +53,7 @@ class Bibutils
         $cmd = self::makeReadCommand($srcPath, $srcFmt);
         $app = self::getWriteApp($options['out'] ?? '');
 
-        return self::run("$cmd | ./$app");
+        return self::run("$cmd | $app");
     }
 
     public static function getReadApp(string $format): string
@@ -72,9 +72,9 @@ class Bibutils
             case 'nbib':
             case 'ris':
             case 'wordbib':
-                return $format . '2xml';
+                return './' . $format . '2xml';
             case 'doc':
-                return 'wordbib2xml';
+                return './wordbib2xml';
             case 'mod':
             case 'xml':
                 return 'cat'; // trivial case
@@ -94,10 +94,10 @@ class Bibutils
             case 'isi':
             case 'nbib':
             case 'ris':
-            case 'wordbib':
+            case './wordbib':
                 return 'xml2' . $format;
             case 'doc':
-                return 'xml2wordbib';
+                return './xml2wordbib';
             case 'mod':
             case 'xml':
                 return 'cat'; // trivial case
@@ -153,7 +153,7 @@ class Bibutils
 
         $app = self::getReadApp($format);
 
-        return "./$app '$filename'";
+        return "$app '$filename'";
     }
 
     protected static function run(string $cmd): string
