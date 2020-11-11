@@ -75,6 +75,9 @@ class Bibutils
                 return $format . '2xml';
             case 'doc':
                 return 'wordbib2xml';
+            case 'mod':
+            case 'xml':
+                return 'cat'; // trivial case
             default:
                 throw new Exception("Unknown reading format '$format'");
         }
@@ -95,6 +98,9 @@ class Bibutils
                 return 'xml2' . $format;
             case 'doc':
                 return 'xml2wordbib';
+            case 'mod':
+            case 'xml':
+                return 'cat'; // trivial case
             default:
                 throw new Exception("Unknown writing format '$format'");
         }
