@@ -15,6 +15,8 @@ The Library of Congress's [Metadata Object Description Schema](http://www.loc.go
 **Related:** 
 - [Short introduction](http://sourceforge.net/p/bibutils/home/Working%20with%20MODS/) to using MODS by mChris Putnam.
 - [Metadata Authority Description Schema (MADS)](https://www.loc.gov/standards/mods/design-principles-mods-mads.html)
+- [MODS Example XML Documents](https://www.loc.gov/standards/mods/userguide/examples.html)
+- [Top-Level Elements in MODS](https://www.loc.gov/standards/mods/userguide/generalapp.html)
 
 ## Installation
 
@@ -108,27 +110,27 @@ composer app:convert dev/data/bibtex/one_of_each.bib end
 
 The table below is from [the SourceForge documentation](https://sourceforge.net/p/bibutils/home/Bibutils/)
 
-| Program  |  Description |
-|---|---|
-| `bib2xml`	| convert BibTeX to MODS XML intermediate | 
-| `biblatex2xml`	| convert BibLaTeX to MODS XML intermediate| 
-| `bibdiff`	| compare two bibliographies after reading into the bibutils internal format | 
-| `copac2xml`	| convert COPAC format references to MODS XML intermediate| 
-| `end2xml`	| convert EndNote (Refer format) to MODS XML intermediate| 
-| `endx2xml`	| convert EndNote XML to MODS XML intermediate| 
-| `isi2xml`	| convert ISI web of science to MODS XML intermediate| 
-| `med2xml`	| convert Pubmed XML references to MODS XML intermediate| 
-| `modsclean`	| a MODS to MODS converter for testing puposes mostly| 
-| `nbib2xml`	| convert Pubmed/National Library of Medicine nbib format to MODS XML intermedidate| 
-| `ris2xml`	| convert RIS format to MODS XML intermediate| 
-| `xml2ads`	| convert MODS XML intermediate into Smithsonian Astrophysical | Observatory (SAO)/National Aeronautics and Space Administration (NASA) Astrophyics Data System or ADS reference format (converter submitted by Richard Mathar)| 
-| `xml2bib`	| convert MODS XML intermediate into BibTeX| 
-| `xml2biblatex`	| convert MODS XML intermediate into BibLaTeX| 
-| `xml2end`	| convert MODS XML intermediate into format for EndNote| 
-| `xml2isi`	| convert MODS XML intermediate to ISI format| 
-| `xml2nbib`	| convert MODS XML intermediate to Pubmed/National Library of Medicine nbib format| 
-| `xml2ris`	| convert MODS XML intermediate into RIS format| 
-| `xml2wordbib` |	convert MODS XML intermediate into Word 2007 bibliography format| 
+| Program        | Description                                                                       |
+| -------------- | --------------------------------------------------------------------------------- |
+| `bib2xml`      | convert BibTeX to MODS XML intermediate                                           |
+| `biblatex2xml` | convert BibLaTeX to MODS XML intermediate                                         |
+| `bibdiff`      | compare two bibliographies after reading into the bibutils internal format        |
+| `copac2xml`    | convert COPAC format references to MODS XML intermediate                          |
+| `end2xml`      | convert EndNote (Refer format) to MODS XML intermediate                           |
+| `endx2xml`     | convert EndNote XML to MODS XML intermediate                                      |
+| `isi2xml`      | convert ISI web of science to MODS XML intermediate                               |
+| `med2xml`      | convert Pubmed XML references to MODS XML intermediate                            |
+| `modsclean`    | a MODS to MODS converter for testing puposes mostly                               |
+| `nbib2xml`     | convert Pubmed/National Library of Medicine nbib format to MODS XML intermedidate |
+| `ris2xml`      | convert RIS format to MODS XML intermediate                                       |
+| `xml2ads`      | convert MODS XML intermediate into Smithsonian Astrophysical                      | Observatory (SAO)/National Aeronautics and Space Administration (NASA) Astrophyics Data System or ADS reference format (converter submitted by Richard Mathar) |
+| `xml2bib`      | convert MODS XML intermediate into BibTeX                                         |
+| `xml2biblatex` | convert MODS XML intermediate into BibLaTeX                                       |
+| `xml2end`      | convert MODS XML intermediate into format for EndNote                             |
+| `xml2isi`      | convert MODS XML intermediate to ISI format                                       |
+| `xml2nbib`     | convert MODS XML intermediate to Pubmed/National Library of Medicine nbib format  |
+| `xml2ris`      | convert MODS XML intermediate into RIS format                                     |
+| `xml2wordbib`  | convert MODS XML intermediate into Word 2007 bibliography format                  |
 
 ---
 
