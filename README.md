@@ -22,6 +22,7 @@ The Library of Congress's [Metadata Object Description Schema](http://www.loc.go
 
 ```bash
 $ composer require proximify/bibutils
+$ cd vendor/proximify/bibutils && composer build
 ```
 
 ## Class synopsis
@@ -146,6 +147,6 @@ This project has adopted the [Proximify Open Source Code of Conduct](https://git
 
 Copyright (c) Proximify Inc. All rights reserved.
 
-Licensed under the [GNU General Public License Version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) license.
+Licensed under the [MIT](https://opensource.org/licenses/MIT) license. Please see [License File](LICENSE.md) for more information.
 
-**Software component** is made by [Proximify](https://proximify.com). We invite the community to participate.
+**Bibutils (PHP Wrapper)** is made by [Proximify](https://proximify.com). We invite the community to participate.

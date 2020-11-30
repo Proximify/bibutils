@@ -6,7 +6,7 @@
  * @license   MIT
  */
 
-namespace Proximify;
+namespace Proximify\Bibutils;
 
 use Exception;
 

@@ -1,31 +1,56 @@
 {
     "name": "proximify/bibutils",
-    "description": "A PHP class to interface with the Bibutils libraries written in ANSI C.",
     "type": "library",
-    "license": "GPL 2",
+    "description": "A PHP class to interface with the Bibutils libraries written in ANSI C.",
+    "keywords": [
+        "proximify",
+        "bibutils",
+        "bibtex",
+        "endnote",
+        "uniweb"
+    ],
+    "homepage": "https://github.com/proximify/bibutils",
+    "license": "MIT",
     "authors": [
         {
             "name": "Proximify Inc",
-            "email": "support@proximify.ca"
+            "email": "support@proximify.ca",
+            "homepage": "https://proximify.com",
+            "role": "Developer"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "Proximify\\": "src"
-        }
-    },
-    "minimum-stability": "stable",
     "require": {
-        "php": ">=7.3"
+        "php": "~7.3"
     },
     "require-dev": {
         "proximify/cli-actions": "^1.0"
     },
+    "autoload": {
+        "psr-4": {
+            "Proximify\\Bibutils\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Proximify\\Bibutils\\": "tests"
+        }
+    },
     "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs src tests",
+        "fix-style": "phpcbf src tests",
         "post-install-cmd": "@build",
         "post-create-project-cmd": "@build",
         "build": "cd src/make && make",
         "app:read": "Proximify\\CLIActions::auto",
         "app:convert": "Proximify\\CLIActions::auto"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
